@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "913050033625",
+    "project_id": "tiendita-usb-e9ec7",
+    "storage_bucket": "tiendita-usb-e9ec7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913050033625:android:6a52bad4bab3a93cf64dc8",
+        "android_client_info": {
+          "package_name": "com.juniors.tienditausb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC57jOSRYy4lcjXdFrSjdvqyHhjS8Isa1Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
