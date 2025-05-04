@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.juniors.tienditausb.Fragmentos.FragmentChats
 import com.juniors.tienditausb.Fragmentos.FragmentCuenta
 import com.juniors.tienditausb.Fragmentos.FragmentInicio
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firebaseDatabase: FirebaseDatabase
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
