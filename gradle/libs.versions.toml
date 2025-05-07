@@ -13,6 +13,11 @@ googleGmsGoogleServices = "4.4.2"
 firebaseDatabaseV = "21.0.0"
 firebaseAuthV= "23.2.0"
 loginGoogleV="20.7.0"
+glideV= "4.16.0"
+ccpV="2.7.0"
+firebaseStorageV="20.3.0"
+mapasV="18.2.0"
+placesV="3.5.0"
 
 
 [libraries]
@@ -27,6 +32,11 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 firebaseAuth={group="com.google.firebase", name="firebase-auth", version.ref="firebaseAuthV"}
 firebaseDatabase={group="com.google.firebase", name="firebase-database", version.ref="firebaseDatabaseV"}
 loginGoogle={group="com.google.android.gms", name="play-services-auth", version.ref="loginGoogleV"}
+glide={group="com.github.bumptech.glide", name="glide", version.ref="glideV"}
+ccp={group="com.hbb20",name="ccp", version.ref="ccpV"}
+firebaseStorage={group="com.google.firebase", name="firebase-storage", version.ref="firebaseStorageV"}
+mapas={group="com.google.android.gms", name="play-services-maps", version.ref="mapasV"}
+places={group="com.google.android.libraries.places", name="places", version.ref="placesV"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

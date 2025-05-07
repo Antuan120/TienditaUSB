@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.juniors.tienditausb.Anuncios.CrearAnuncio
 import com.juniors.tienditausb.Fragmentos.FragmentChats
 import com.juniors.tienditausb.Fragmentos.FragmentCuenta
 import com.juniors.tienditausb.Fragmentos.FragmentInicio
@@ -53,16 +54,16 @@ class MainActivity : AppCompatActivity() {
                     verFragmentCuenta()
                     true
                 }
-                else -> false
+                else -> {
+                    false
+                }
             }
         }
 
-
-                ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        binding.FAB.setOnClickListener {
+            startActivity(Intent(this, CrearAnuncio::class.java))
         }
+
     }
 
     private fun comprobarSesion() {
