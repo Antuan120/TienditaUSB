@@ -20,9 +20,23 @@ object Costantes {
         "Belleza y cuidado personal",
         "Libros",
         "Deportes",
-        "Juguetes y figuras",
-        "Mascotas"
+        "Juguetes y figuras"
     )
+
+    val categoriasIcono = arrayOf(
+        R.drawable.ic_categoria_todos,
+        R.drawable.ic_categoria_mobiles,
+        R.drawable.ic_categoria_ordenadores,
+        R.drawable.ic_categoria_electrodomesticos,
+        R.drawable.ic_categoria_vehiculos,
+        R.drawable.ic_categoria_consolas,
+        R.drawable.ic_categoria_muebles,
+        R.drawable.ic_categoria_belleza,
+        R.drawable.ic_categoria_libros,
+        R.drawable.ic_categoria_deportes,
+        R.drawable.ic_categoria_juguetes
+    )
+
     val condiciones = arrayOf(
         "Todos",
         "Nuevo",

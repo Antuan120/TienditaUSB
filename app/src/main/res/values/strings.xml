@@ -72,6 +72,34 @@
     <string name="Txt_selec_ubicacion">Seleccione ubicación</string>
     <string name="Btn_listo">Listo</string>
 
+    !--Fragmento inicio-->
+    <string name="Tv_locacion">Elija una locación</string>
+    <string name="Et_buscar">Buscar </string>
+    <string name="Txt_categoria">Categorias</string>
+    <string name="Tv_categoria">Categoría</string>
+
+    <!--Item anuncio-->
+    <string name="Tv_titulo">Nombre del producto</string>
+    <string name="Tv_descripcion">Descripción del producto, se podrá visualizar un máximo de 3 líneas</string>
+    <string name="Tv_direccion">Dirección</string>
+    <string name="Tv_condicion">Nuevo</string>
+    <string name="Tv_simbolo_precio">S/</string>
+    <string name="Tv_precio">00</string>
+    <string name="Tv_fecha">dd/MM/yyyy</string>
+
+    <string name="Txt_detalle_info">Detalle del anuncio</string>
+    <string name="Tv_cat">Categoría del anuncio</string>
+    <string name="Txt_titulo">Titulo</string>
+    <string name="Txt_descripcion">Descripción</string>
+    <string name="Tv_descr">Descripción del anuncio</string>
+    <string name="Txt_direccion">Dirección</string>
+    <string name="Txt_vistas">Número de visitas del anuncio: </string>
+    <string name="Tv_vistas">0</string>
+    <string name="Txt_descr_vendedor">Descripción del vendedor</string>
+    <string name="Txt_estado">Estado</string>
+    <string name="Tv_estado">Disponible</string>
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
