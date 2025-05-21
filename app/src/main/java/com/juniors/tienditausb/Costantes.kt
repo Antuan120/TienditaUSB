@@ -1,7 +1,14 @@
 package com.juniors.tienditausb
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.text.format.DateFormat
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import java.util.Calendar
+import java.util.HashMap
 import java.util.Locale
 
 object Costantes {
@@ -54,4 +61,77 @@ object Costantes {
 
         return DateFormat.format("dd/MM/yyyy", calendario).toString()
     }
+
+    fun agregarAnuncioFav (context : Context, idAnuncio : String){
+        val firebaseAuth = FirebaseAuth.getInstance()
+        val tiempo = Costantes.obtenerTiempoDis()
+
+        val hashMap = HashMap<String, Any>()
+        hashMap["idAnuncio"] = idAnuncio
+        hashMap["tiempo"] = tiempo
+
+        val ref = FirebaseDatabase.getInstance().getReference("Usuarios")
+        ref.child(firebaseAuth.uid!!).child("Favoritos").child(idAnuncio)
+            .setValue(hashMap)
+            .addOnSuccessListener {
+                Toast.makeText(context,
+                    "Anuncio agregado a Favoritos",
+                    Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {e->
+                Toast.makeText(context,
+                    "${e.message}",
+                    Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    fun eliminarAnuncioFav (context: Context, idAnuncio: String){
+        val firebaseAuth = FirebaseAuth.getInstance()
+
+        val ref = FirebaseDatabase.getInstance().getReference("Usuarios")
+        ref.child(firebaseAuth.uid!!).child("Favoritos").child(idAnuncio)
+            .removeValue()
+            .addOnSuccessListener {
+                Toast.makeText(context,
+                    "Anuncio eliminado de Favoritos",
+                    Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {e->
+                Toast.makeText(context,
+                    "${e.message}",
+                    Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    fun mapaIntent (context: Context, latitud : Double, longitud : Double){
+        val googleMapIntentUri = Uri.parse("http://maps.google.com/maps?daddr=$latitud,$longitud")
+
+        val mapIntent = Intent(Intent.ACTION_VIEW, googleMapIntentUri)
+        mapIntent.setPackage("com.google.android.apps.maps")
+        if (mapIntent.resolveActivity(context.packageManager)!=null){
+            //La app de google maps si está instalada
+            context.startActivity(mapIntent)
+        }else{
+            //Si la app de google maps no está instalada
+            Toast.makeText(context, "No tienes instalada la aplicación de Google Maps",
+                Toast.LENGTH_SHORT).show()
+        }
+
+    }
+
+    fun llamarIntent (context: Context, tef : String){
+        val intent = Intent(Intent.ACTION_CALL)
+        intent.setData(Uri.parse("tel:$tef"))
+        context.startActivity(intent)
+    }
+
+    fun smsIntent (context: Context, tel : String){
+        val intent = Intent(Intent.ACTION_SENDTO)
+        intent.setData(Uri.parse("smsto:$tel"))
+        intent.putExtra("sms_body", "")
+        context.startActivity(intent)
+    }
+
+
+
 }

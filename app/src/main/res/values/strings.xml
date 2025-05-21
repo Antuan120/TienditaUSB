@@ -6,7 +6,7 @@
     <string name="Item_Inicio">Inicio</string>
     <string name="Item_Chats">Chats</string>
     <string name="Item_Vender">Vender</string>
-    <string name="Item_Mis_Anuncios">Mis anuncios</string>
+    <string name="Item_Mis_Anuncios">Anuncios</string>
     <string name="Item_Cuenta">Cuenta</string>
 
     <string name="TituloRl">Titulo</string>
@@ -99,6 +99,13 @@
     <string name="Txt_estado">Estado</string>
     <string name="Tv_estado">Disponible</string>
 
+    !--Opciones de detalle anuncio-->
+    <string name="Btn_mapa">Mapa</string>
+    <string name="Btn_llamar">Llam.</string>
+    <string name="Btn_sms">SMS</string>
+    <string name="Btn_chat">Chat</string>
+
+    <string name="imagenContadorTv">1/4</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

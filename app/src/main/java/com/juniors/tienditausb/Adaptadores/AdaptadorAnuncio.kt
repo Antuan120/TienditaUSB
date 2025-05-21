@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
+import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.bumptech.glide.Glide
@@ -16,11 +17,13 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.juniors.tienditausb.Costantes
+import com.juniors.tienditausb.DetalleAnuncio.DetalleAnuncio
+import com.juniors.tienditausb.Filtro.FiltrarAnuncio
 import com.juniors.tienditausb.Modelo.ModeloAnuncio
 import com.juniors.tienditausb.R
 import com.juniors.tienditausb.databinding.ItemAnuncioBinding
 
-class AdaptadorAnuncio : RecyclerView.Adapter<AdaptadorAnuncio.HolderAnuncio>{
+class AdaptadorAnuncio : RecyclerView.Adapter<AdaptadorAnuncio.HolderAnuncio>, Filterable{
 
     private lateinit var binding : ItemAnuncioBinding
 
@@ -28,7 +31,7 @@ class AdaptadorAnuncio : RecyclerView.Adapter<AdaptadorAnuncio.HolderAnuncio>{
     var anuncioArrayList : ArrayList<ModeloAnuncio>
     private var firebaeAuth : FirebaseAuth
     private var filtroLista : ArrayList<ModeloAnuncio>
-
+    private var filtro : FiltrarAnuncio ?= null
 
     constructor(context: Context, anuncioArrayList: ArrayList<ModeloAnuncio>) {
         this.context = context
@@ -36,6 +39,8 @@ class AdaptadorAnuncio : RecyclerView.Adapter<AdaptadorAnuncio.HolderAnuncio>{
         firebaeAuth = FirebaseAuth.getInstance()
         this.filtroLista = anuncioArrayList
     }
+
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderAnuncio {
@@ -70,6 +75,32 @@ class AdaptadorAnuncio : RecyclerView.Adapter<AdaptadorAnuncio.HolderAnuncio>{
         holder.Tv_precio.text = precio
         holder.Tv_fecha.text = formatoFecha
 
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, DetalleAnuncio::class.java)
+            intent.putExtra("idAnuncio", modeloAnuncio.id)
+            context.startActivity(intent)
+        }
+
+        if (condicion.equals("Nuevo")){
+            holder.Tv_condicion.setTextColor(Color.parseColor("#48C9B0"))
+        }else if (condicion.equals("Usado")){
+            holder.Tv_condicion.setTextColor(Color.parseColor("#5DADE2"))
+        }else if (condicion.equals("Renovado")){
+            holder.Tv_condicion.setTextColor(Color.parseColor("#A569BD"))
+        }
+
+        holder.Ib_fav.setOnClickListener {
+            val favorito = modeloAnuncio.favorito
+
+            if (favorito){
+                //Favorito = true
+                Costantes.eliminarAnuncioFav(context, modeloAnuncio.id)
+            }else{
+                //Favorito = false
+                Costantes.agregarAnuncioFav(context, modeloAnuncio.id)
+            }
+        }
+
 
     }
 
@@ -81,6 +112,11 @@ class AdaptadorAnuncio : RecyclerView.Adapter<AdaptadorAnuncio.HolderAnuncio>{
                     val favorito = snapshot.exists()
                     modeloAnuncio.favorito = favorito
 
+                    if (favorito){
+                        holder.Ib_fav.setImageResource(R.drawable.ic_anuncio_es_favorito)
+                    }else{
+                        holder.Ib_fav.setImageResource(R.drawable.ic_no_favorito)
+                    }
                 }
 
                 override fun onCancelled(error: DatabaseError) {
@@ -125,6 +161,13 @@ class AdaptadorAnuncio : RecyclerView.Adapter<AdaptadorAnuncio.HolderAnuncio>{
         var Tv_precio = binding.TvPrecio
         var Tv_fecha = binding.TvFecha
         var Ib_fav = binding.IbFav
+    }
+
+    override fun getFilter(): Filter {
+        if (filtro == null){
+            filtro = FiltrarAnuncio(this, filtroLista)
+        }
+        return filtro as FiltrarAnuncio
     }
 
 

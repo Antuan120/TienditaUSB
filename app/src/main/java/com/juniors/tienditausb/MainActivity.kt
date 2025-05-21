@@ -4,8 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.juniors.tienditausb.Anuncios.CrearAnuncio
@@ -72,7 +70,6 @@ class MainActivity : AppCompatActivity() {
             finishAffinity()
         }
     }
-
     private fun verFragmentInicio(){
         binding.TituloRl.text = "Inicio"
         val fragment = FragmentInicio()
@@ -88,7 +85,7 @@ class MainActivity : AppCompatActivity() {
         fragmentTransition.commit()
     }
     private fun verFragmentMisAnuncios(){
-        binding.TituloRl.text = "Mis Anuncios"
+        binding.TituloRl.text = "Anuncios"
         val fragment = FragmentMisAnuncios()
         val fragmentTransition = supportFragmentManager.beginTransaction()
         fragmentTransition.replace(binding.Fragment1.id, fragment, "FragmentMisAnuncios")

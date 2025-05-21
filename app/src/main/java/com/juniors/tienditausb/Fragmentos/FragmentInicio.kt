@@ -87,6 +87,35 @@ class FragmentInicio : Fragment() {
             seleccionarUbicacionARL.launch(intent)
         }
 
+        binding.EtBuscar.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(filtro: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                try {
+                    val consulta = filtro.toString()
+                    adaptadorAnuncio.filter.filter(consulta)
+                }catch (e:Exception){
+
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+
+            }
+        })
+
+        binding.IbLimpiar.setOnClickListener {
+            val consulta = binding.EtBuscar.text.toString().trim()
+            if (consulta.isNotEmpty()){
+                binding.EtBuscar.setText("")
+                Toast.makeText(context,"Se ha limpiado el campo de búsqueda",Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(context,"No se ha ingresado una consulta",Toast.LENGTH_SHORT).show()
+            }
+        }
+
     }
 
     private val seleccionarUbicacionARL = registerForActivityResult(
