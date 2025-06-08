@@ -27,6 +27,7 @@ import com.google.firebase.database.ValueEventListener
 import com.juniors.tienditausb.Adaptadores.AdaptadorImgSlider
 import com.juniors.tienditausb.Anuncios.CrearAnuncio
 import com.juniors.tienditausb.Costantes
+import com.juniors.tienditausb.DetalleVendedor.DetalleVendedor
 import com.juniors.tienditausb.MainActivity
 import com.juniors.tienditausb.Modelo.ModeloAnuncio
 import com.juniors.tienditausb.Modelo.ModeloImgSlider
@@ -76,7 +77,7 @@ class DetalleAnuncio : AppCompatActivity() {
         cargarImgAnuncio()
 
         binding.IbEditar.setOnClickListener {
-           // opcionesDialog()
+            opcionesDialog()
         }
 
         binding.IbFav.setOnClickListener {
@@ -139,11 +140,18 @@ class DetalleAnuncio : AppCompatActivity() {
 
         }
 
+        binding.IvInfoVendedor.setOnClickListener {
+            val intent = Intent(this, DetalleVendedor::class.java)
+            intent.putExtra("uidVendedor", uidVendedor)
+            Toast.makeText(this,"El uid del vendedor es ${uidVendedor}",Toast.LENGTH_SHORT).show()
+            startActivity(intent)
+        }
+
 
 
     }
 
-   /* private fun opcionesDialog() {
+    private fun opcionesDialog() {
         val popupMenu = PopupMenu(this, binding.IbEditar)
 
         popupMenu.menu.add(Menu.NONE,0,0, "Editar")
@@ -162,13 +170,13 @@ class DetalleAnuncio : AppCompatActivity() {
                 startActivity(intent)
             }else if (itemId == 1){
                 //Marcar como vendido
-                dialogMarcarVendido()
+                 dialogMarcarVendido()
             }
 
             return@setOnMenuItemClickListener true
         }
 
-    }*/
+    }
 
     private fun cargarInfoAnuncio(){
         var ref = FirebaseDatabase.getInstance().getReference("Anuncios")
@@ -278,7 +286,7 @@ class DetalleAnuncio : AppCompatActivity() {
             }
     }
 
-   /* private fun dialogMarcarVendido(){
+    private fun dialogMarcarVendido(){
         val Btn_si : MaterialButton
         val Btn_no : MaterialButton
         val dialog = Dialog(this)
@@ -298,7 +306,7 @@ class DetalleAnuncio : AppCompatActivity() {
 
         dialog.show()
         dialog.setCanceledOnTouchOutside(false)
-    }*/
+    }
 
     private fun cargarInfoVendedor() {
         val ref = FirebaseDatabase.getInstance().getReference("Usuarios")

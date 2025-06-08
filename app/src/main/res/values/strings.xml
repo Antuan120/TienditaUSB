@@ -107,6 +107,28 @@
 
     <string name="imagenContadorTv">1/4</string>
 
+    <!--CD eliminar imagen-->
+    <string name="Txt_eliminar">¿Estás seguro(a) de eliminar la imagen?</string>
+    <string name="Btn_si">Si</string>
+    <string name="Btn_no">Cancelar</string>
+
+    <!--CD marcar vendido-->
+    <string name="Txt_marcar_vendido">¿Marcar como vendido el producto?</string>
+
+    <string name="Txt_perfil_vendedor">Perfil del vendedor</string>
+    <string name="Txt_anuncios">Anuncios publicados:</string>
+    <string name="Tv_num_anuncios">0</string>
+
+    <string name="Txt_comentarios">Comentarios</string>
+    <string name="Txt_agregar">Agregar un comentario</string>
+
+    <string name="Et_agregar_comentario">Escriba un comentario</string>
+    <string name="Btn_comentar">Comentar</string>
+
+    <string name="Tv_nombres_comentario">Nombres</string>
+    <string name="Tv_fecha_comentario">dd/MM/yyyy</string>
+    <string name="Tv_comentario">Comentario del usuario</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
