@@ -3,56 +3,66 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!--Header: Logo y título-->
-    <include
-        android:id="@+id/header"
-        layout="@layout/header_zona_usb"
+    <RelativeLayout
+        android:id="@+id/ToolbarRl"
+        android:background="@color/green"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="@dimen/m_toolbar_height">
+
+        <TextView
+            android:id="@+id/TituloRl"
+            android:text="@string/TituloRl"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ccc"
+            android:layout_alignParentBottom="true"/>
+
+
+    </RelativeLayout>
 
     <FrameLayout
-        android:id="@+id/Fragment1"
+        android:id="@+id/FragmentL1"
+        android:layout_below="@id/ToolbarRl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/View1"
-        android:layout_marginBottom="1dp"/>
+        android:layout_above="@+id/View1"/>
 
     <View
-    android:id="@+id/View1"
-    android:layout_width="match_parent"
-    android:layout_height="1dp"
-    android:background="#ccc"
-    android:layout_above="@+id/bottomNV"/>
-
+        android:id="@+id/View1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        android:layout_above="@+id/BottomNV"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNV"
+        android:id="@+id/BottomNV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/green"
-        app:itemIconTint="@color/white"
-        app:labelVisibilityMode="labeled"
-        app:itemTextColor="@color/white"
-        app:menu="@menu/mi_menu"/>
+        app:menu="@menu/mi_menu"
+        app:labelVisibilityMode="labeled"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/FAB"
-            android:layout_width="wrap_content"
-            android:contentDescription="@string/agregar_nuevo_item"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_agregar"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="60dp"
-            android:backgroundTint="@color/green"
-            app:tint="@android:color/white"/>
+        android:id="@+id/FAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tint="@android:color/white"
+        android:backgroundTint="@color/green"
+        android:src="@drawable/ic_agregar"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"/>
 
 </RelativeLayout>
-
-

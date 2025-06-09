@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
 import com.juniors.tienditausb.Anuncios.CrearAnuncio
 import com.juniors.tienditausb.Fragmentos.FragmentChats
 import com.juniors.tienditausb.Fragmentos.FragmentCuenta
@@ -17,7 +16,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var firebaseDatabase: FirebaseDatabase
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         verFragmentInicio()
 
-        binding.bottomNV.setOnItemSelectedListener { item ->
+        binding.BottomNV.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.Item_Inicio -> {
                     verFragmentInicio()
@@ -76,28 +74,28 @@ class MainActivity : AppCompatActivity() {
         binding.TituloRl.text = "Inicio"
         val fragment = FragmentInicio()
         val fragmentTransition = supportFragmentManager.beginTransaction()
-        fragmentTransition.replace(binding.Fragment1.id, fragment, "fragmentInicio")
+        fragmentTransition.replace(binding.FragmentL1.id, fragment, "fragmentInicio")
         fragmentTransition.commit()
     }
     private fun verFragmentChats(){
         binding.TituloRl.text = "Chats"
         val fragment = FragmentChats()
         val fragmentTransition = supportFragmentManager.beginTransaction()
-        fragmentTransition.replace(binding.Fragment1.id, fragment, "FragmentChats")
+        fragmentTransition.replace(binding.FragmentL1.id, fragment, "FragmentChats")
         fragmentTransition.commit()
     }
     private fun verFragmentMisAnuncios(){
         binding.TituloRl.text = "Anuncios"
         val fragment = FragmentMisAnuncios()
         val fragmentTransition = supportFragmentManager.beginTransaction()
-        fragmentTransition.replace(binding.Fragment1.id, fragment, "FragmentMisAnuncios")
+        fragmentTransition.replace(binding.FragmentL1.id, fragment, "FragmentMisAnuncios")
         fragmentTransition.commit()
     }
     private fun verFragmentCuenta(){
         binding.TituloRl.text = "Cuenta"
         val fragment = FragmentCuenta()
         val fragmentTransition = supportFragmentManager.beginTransaction()
-        fragmentTransition.replace(binding.Fragment1.id, fragment, "FragmentCuenta")
+        fragmentTransition.replace(binding.FragmentL1.id, fragment, "FragmentCuenta")
         fragmentTransition.commit()
     }
 }

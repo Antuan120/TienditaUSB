@@ -15,7 +15,8 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/Llbuscar"
-        android:layout_below="@+id/header"        android:weightSum="5"
+        android:layout_below="@+id/header"
+        android:weightSum="5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
