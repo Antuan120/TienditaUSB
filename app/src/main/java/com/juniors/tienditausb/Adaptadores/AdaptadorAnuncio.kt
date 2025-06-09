@@ -22,10 +22,11 @@ import com.juniors.tienditausb.Filtro.FiltrarAnuncio
 import com.juniors.tienditausb.Modelo.ModeloAnuncio
 import com.juniors.tienditausb.R
 import com.juniors.tienditausb.databinding.ItemAnuncioBinding
+import com.juniors.tienditausb.databinding.ItemAnuncioNuevaVersionBinding
 
 class AdaptadorAnuncio : RecyclerView.Adapter<AdaptadorAnuncio.HolderAnuncio>, Filterable{
 
-    private lateinit var binding : ItemAnuncioBinding
+    private lateinit var binding : ItemAnuncioNuevaVersionBinding
 
     private var context : Context
     var anuncioArrayList : ArrayList<ModeloAnuncio>
@@ -44,7 +45,7 @@ class AdaptadorAnuncio : RecyclerView.Adapter<AdaptadorAnuncio.HolderAnuncio>, F
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderAnuncio {
-        binding = ItemAnuncioBinding.inflate(LayoutInflater.from(context), parent, false)
+        binding = ItemAnuncioNuevaVersionBinding.inflate(LayoutInflater.from(context), parent, false)
         return HolderAnuncio(binding.root)
     }
 
