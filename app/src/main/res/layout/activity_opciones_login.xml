@@ -10,12 +10,20 @@
     android:layout_height="match_parent"
     tools:context=".OpcionesLogin">
 
+    <!--Header: Logo y título-->
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_zona_usb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="30dp"
-        android:gravity="center" >
+        android:gravity="center"
+        android:layout_below="@id/header" >
 
         <ImageView
             android:id="@+id/email_logo"
@@ -33,7 +41,8 @@
             android:textAllCaps="true"
             android:layout_width="match_parent"
             android:layout_height="@dimen/m_button_height"
-            app:cornerRadius="8dp"/>
+            app:cornerRadius="8dp"
+            app:backgroundTint="@color/green"/>
 
         <ImageView
             android:id="@+id/google_logo"
@@ -51,7 +60,8 @@
             android:textAllCaps="true"
             android:layout_width="match_parent"
             android:layout_height="@dimen/m_button_height"
-            app:cornerRadius="8dp"/>
+            app:cornerRadius="8dp"
+            app:backgroundTint="@color/green"/>
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>

@@ -8,7 +8,15 @@
     android:padding="10dp"
     tools:context=".EditarPerfil">
 
+    <!--Header: Logo y título-->
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_zona_usb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <RelativeLayout
+        android:layout_below="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -43,6 +51,7 @@
                 android:layout_alignParentEnd="true"
                 app:fabSize="mini"
                 android:src="@drawable/ic_selec_imagen"
+                android:contentDescription="@string/cd_cambiar_imagen_perfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -100,9 +109,9 @@
 
                 <EditText
                     android:id="@+id/Et_f_nac"
-                    android:hint="@string/Et_f_nac"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Et_f_nac" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -160,6 +169,7 @@
             android:layout_below="@+id/RL_Cod_Tel"
             android:layout_marginTop="15dp"
             app:icon="@drawable/ic_editar"
+            android:backgroundTint="@color/green"
             android:layout_width="200dp"
             android:layout_height="@dimen/m_button_height"/>
 

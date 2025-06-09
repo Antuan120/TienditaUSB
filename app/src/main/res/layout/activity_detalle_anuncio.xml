@@ -7,10 +7,19 @@
     android:layout_height="match_parent"
     tools:context=".DetalleAnuncio.DetalleAnuncio">
 
+
+    <!--Header: Logo y título-->
+    <RelativeLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/header_zona_usb" />
+    </RelativeLayout>
     <!--Toolbar-->
     <RelativeLayout
         android:id="@+id/ToolbarRl"
         android:layout_width="match_parent"
+        android:layout_below="@id/header_layout"
         android:layout_height="@dimen/m_toolbar_height">
 
         <ImageButton
@@ -19,8 +28,8 @@
             android:background="@android:color/transparent"
             android:layout_centerVertical="true"
             android:padding="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="48dp"
+            android:layout_height="48dp"/>
 
         <TextView
             android:layout_centerInParent="true"
@@ -35,8 +44,8 @@
             android:layout_toStartOf="@+id/Ib_eliminar"
             android:layout_centerVertical="true"
             android:padding="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="48dp"
+            android:layout_height="48dp"/>
 
         <!--Eliminar-->
         <ImageButton
@@ -46,8 +55,8 @@
             android:layout_toStartOf="@+id/Ib_fav"
             android:layout_centerVertical="true"
             android:padding="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="48dp"
+            android:layout_height="48dp"/>
 
         <!--Fav - no fav-->
         <ImageButton
@@ -58,8 +67,8 @@
             android:background="@android:color/transparent"
             android:layout_centerVertical="true"
             android:padding="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="48dp"
+            android:layout_height="48dp"/>
 
     </RelativeLayout>
 
@@ -347,6 +356,7 @@
                     app:icon="@drawable/ic_op_locacion"
                     app:iconGravity="top"
                     android:textAllCaps="true"
+                    app:backgroundTint="@color/green"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -360,6 +370,7 @@
                     app:icon="@drawable/ic_op_llamar"
                     app:iconGravity="top"
                     android:textAllCaps="true"
+                    app:backgroundTint="@color/green"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -373,6 +384,7 @@
                     app:icon="@drawable/ic_op_sms"
                     app:iconGravity="top"
                     android:textAllCaps="true"
+                    app:backgroundTint="@color/green"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -386,6 +398,7 @@
                     app:icon="@drawable/ic_op_chat"
                     app:iconGravity="top"
                     android:textAllCaps="true"
+                    app:backgroundTint="@color/green"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 

@@ -8,6 +8,13 @@
     android:orientation="vertical"
     tools:context=".Fragmentos.FragmentInicio">
 
+    <!--Header: Logo y título-->
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_zona_usb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <!--Seleccionar una ubicación-->
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"

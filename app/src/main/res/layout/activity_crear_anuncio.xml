@@ -7,9 +7,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Anuncios.CrearAnuncio">
+
+    <!--Header: Logo y título-->
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_zona_usb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     
     <RelativeLayout
         android:id="@+id/RL_Imagen"
+        android:layout_below="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         
@@ -210,6 +218,7 @@
         android:textAllCaps="true"
         android:layout_margin="10dp"
         app:cornerRadius="8dp"
+        android:backgroundTint="@color/green"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     

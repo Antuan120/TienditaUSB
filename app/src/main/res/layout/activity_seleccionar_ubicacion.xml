@@ -7,8 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".SeleccionarUbicacion">
 
+    <!--Header: Logo y título-->
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_zona_usb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <RelativeLayout
         android:id="@+id/ToolbarRl"
+        android:layout_below="@id/header"
         android:layout_width="match_parent"
         android:layout_height="@dimen/m_toolbar_height">
 
@@ -100,6 +108,7 @@
             android:text="@string/Btn_listo"
             android:textAllCaps="true"
             app:cornerRadius="8dp"
+            app:backgroundTint="@color/green"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

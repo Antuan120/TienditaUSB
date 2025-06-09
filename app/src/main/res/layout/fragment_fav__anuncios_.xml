@@ -7,9 +7,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragmentos.Fav_Anuncios_Fragment">
 
+    <!--Header: Logo y título-->
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_zona_usb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/LlBuscar"
         android:layout_width="match_parent"
+        android:layout_below="@+id/header"
         android:layout_height="wrap_content"
         android:weightSum="5">
 

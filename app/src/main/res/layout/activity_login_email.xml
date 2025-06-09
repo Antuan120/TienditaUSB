@@ -7,6 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".Opciones_login.Login_email">
 
+    <!--Header: Logo y título-->
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_zona_usb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -74,6 +81,7 @@
             android:textAllCaps="true"
             android:layout_marginTop="15dp"
             android:layout_width="180dp"
+            android:backgroundTint="@color/green"
             android:layout_height="@dimen/m_button_height"/>
 
         <androidx.appcompat.widget.LinearLayoutCompat

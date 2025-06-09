@@ -7,8 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".DetalleVendedor.DetalleVendedor">
 
+    <!--Header: Logo y título-->
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_zona_usb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
     <RelativeLayout
         android:id="@+id/ToolbarRl"
+        android:layout_below="@id/header"
         android:layout_width="match_parent"
         android:layout_height="@dimen/m_toolbar_height">
 
@@ -16,10 +25,11 @@
             android:id="@+id/Ib_regresar"
             android:src="@drawable/ic_regresar"
             android:background="@android:color/transparent"
-            android:padding="10dp"
+            android:padding="12dp"
             android:layout_centerVertical="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:contentDescription="@string/descripcion_boton_regresar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"/>
 
         <TextView
             android:text="@string/Txt_perfil_vendedor"
