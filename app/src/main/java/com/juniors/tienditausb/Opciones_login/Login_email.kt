@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.juniors.tienditausb.MainActivity
 import com.juniors.tienditausb.R
+import com.juniors.tienditausb.RecuperarPassword
 import com.juniors.tienditausb.Registro_email
 import com.juniors.tienditausb.databinding.ActivityLoginEmailBinding
 
@@ -42,6 +43,11 @@ class Login_email : AppCompatActivity() {
        binding.TxtRegistrarme.setOnClickListener {
            startActivity(Intent(this@Login_email, Registro_email::class.java))
        }
+
+        binding.TvRecuperar.setOnClickListener {
+            startActivity(Intent(this@Login_email, RecuperarPassword::class.java))
+        }
+
     }
     private var email = ""
     private var password = ""

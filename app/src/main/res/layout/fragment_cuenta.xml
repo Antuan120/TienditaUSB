@@ -164,24 +164,67 @@
   <!--Editar perfil-->
   <com.google.android.material.button.MaterialButton
       android:id="@+id/Btn_editar_perfil"
+      android:layout_width="220dp"
+      android:layout_height="@dimen/m_button_height"
       android:layout_below="@+id/TxtOpciones"
+      android:layout_centerInParent="true"
       android:text="@string/Btn_editar_perfil"
+      android:textAllCaps="true"
+      app:icon="@drawable/ic_editar" />
+
+  <!--Cambiar password-->
+  <com.google.android.material.button.MaterialButton
+      android:id="@+id/Btn_cambiar_pass"
+      android:layout_width="220dp"
+      android:layout_height="@dimen/m_button_height"
+      android:layout_below="@+id/Btn_editar_perfil"
+      android:layout_centerInParent="true"
+      android:text="@string/Btn_cambiar_pass"
+      android:textAllCaps="true"
+      app:icon="@drawable/ic_password" />
+
+  <!--Verificar cuenta-->
+  <com.google.android.material.button.MaterialButton
+      android:id="@+id/Btn_verificar_cuenta"
+      android:layout_width="220dp"
+      android:layout_height="@dimen/m_button_height"
+      android:layout_below="@+id/Btn_cambiar_pass"
+      android:layout_centerInParent="true"
+      android:text="@string/Btn_verificar_cuenta"
+      android:textAllCaps="true"
+      app:icon="@drawable/ic_verificar"/>
+
+  <!--Eliminar todos mis anuncios-->
+  <com.google.android.material.button.MaterialButton
+      android:id="@+id/Btn_eliminar_anuncios"
+      android:text="@string/Btn_eliminar_anuncios"
+      android:layout_below="@+id/Btn_verificar_cuenta"
       android:layout_centerInParent="true"
       android:textAllCaps="true"
-      android:layout_height="@dimen/m_button_height"
-      android:layout_width="200dp"
-      app:icon="@drawable/ic_editar" />
+      android:layout_width="220dp"
+      android:layout_height="wrap_content"/>
+
+  <!--Eliminar cuenta -->
+  <com.google.android.material.button.MaterialButton
+      android:id="@+id/Btn_eliminar_cuenta"
+      android:text="@string/Btn_eliminar_cuenta"
+      android:layout_below="@+id/Btn_eliminar_anuncios"
+      android:layout_centerInParent="true"
+      android:textAllCaps="true"
+      android:layout_width="220dp"
+      android:layout_height="wrap_content"/>
+
 
 
   <!--Cerrar sesión-->
   <com.google.android.material.button.MaterialButton
       android:id="@+id/Btn_cerrar_sesion"
-      android:text="@string/Btn_cerrar_sesion"
-      android:layout_below="@id/Btn_editar_perfil"
-      android:textAllCaps="true"
-      android:layout_width="200dp"
+      android:layout_width="220dp"
       android:layout_height="@dimen/m_button_height"
+      android:layout_below="@+id/Btn_eliminar_cuenta"
       android:layout_centerInParent="true"
+      android:text="@string/Btn_cerrar_sesion"
+      android:textAllCaps="true"
       app:icon="@drawable/ic_salir" />
 
 

@@ -3,10 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".Opciones_login.Login_email">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -16,94 +14,79 @@
         android:padding="30dp"
         android:gravity="center">
 
-        <!-- Título -->
         <TextView
             android:text="@string/Txt_login"
             android:textStyle="bold"
-            android:textSize="25dp"
-            android:textColor="@color/black"
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <!-- Icono de Login -->
         <ImageView
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:src="@drawable/login"
-            android:layout_width="100dp"
-            android:layout_height="100dp"/>
+            android:layout_width="80dp"
+            android:layout_height="80dp"/>
 
-        <!-- Email -->
+        <!--Email-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            app:boxBackgroundMode="filled"
-            app:boxCornerRadiusTopStart="12dp"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxBackgroundColor="@color/white">
+            android:layout_marginTop="10dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp">
 
             <EditText
                 android:id="@+id/Et_email"
                 android:hint="@string/Et_email"
                 android:inputType="textEmailAddress"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#000000"
-                android:textColorHint="#000000"/>
+                android:layout_height="wrap_content"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Password -->
+        <!--Password-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            app:boxBackgroundMode="filled"
-            app:boxCornerRadiusTopStart="12dp"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:passwordToggleEnabled="true"
-            app:boxBackgroundColor="@color/white">
+            android:layout_marginTop="10dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:passwordToggleEnabled="true">
 
             <EditText
                 android:id="@+id/Et_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:hint="@string/Et_password"
                 android:inputType="textPassword"
-                android:textColor="#000000"
-                android:textColorHint="#000000"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Botón de Ingresar -->
+        <!--Botón ingresar-->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/Btn_ingresar"
             android:text="@string/Btn_ingresar"
-            android:layout_marginTop="20dp"
-            android:layout_width="180dp"
-            android:layout_height="@dimen/m_button_height"
             android:textAllCaps="true"
-            app:cornerRadius="50dp"
-            app:backgroundTint="@color/green"
-            android:textColor="@color/white"/>
+            android:layout_marginTop="15dp"
+            android:layout_width="180dp"
+            android:layout_height="@dimen/m_button_height"/>
 
-        <!-- Registro -->
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:gravity="center">
 
             <TextView
                 android:text="@string/Txt_no_cuenta"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"/>
+                android:layout_height="wrap_content"/>
 
             <TextView
                 android:id="@+id/Txt_registrarme"
@@ -111,9 +94,34 @@
                 android:textStyle="bold"
                 android:layout_marginStart="8dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/green"/>
+                android:layout_height="wrap_content"/>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/Txt_olvide_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/Tv_recuperar"
+                android:text="@string/Tv_recuperar"
+                android:textColor="#3498D8"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
+
 </RelativeLayout>

@@ -129,6 +129,21 @@
     <string name="Tv_fecha_comentario">dd/MM/yyyy</string>
     <string name="Tv_comentario">Comentario del usuario</string>
 
+    <string name="Txt_olvide_pass">He olvidado mi contraseña</string>
+    <string name="Tv_recuperar">Recuperar</string>
+    <string name="Txt_olvide_password">Olvidé mi contraseña</string>
+
+    <string name="Txt_instrucciones">¿Olvidó su contraseña? Ingrese su correo electrónico registrado.
+    Le enviaremos las instrucciones de recuperación</string>
+    <string name="Btn_enviar_instrucciones">Enviar</string>
+
+    <string name="Txt_cambiar_pass">Cambiar contraseña</string>
+    <string name="Txt_instr_cambio_pass">Su nueva contraseña debe ser diferente a la actual</string>
+    <string name="Et_password_actual">Contraseña actual</string>
+    <string name="Et_password_nueva">Contraseña nueva</string>
+    <string name="Et_password_nueva_r">Repita la nueva contraseña</string>
+    <string name="Btn_actualizar_pass">Actualizar</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

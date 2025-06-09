@@ -28,6 +28,12 @@
         android:theme="@style/Theme.TienditaUSB"
         tools:targetApi="31">
         <activity
+            android:name=".CambiarPassword"
+            android:exported="false" />
+        <activity
+            android:name=".RecuperarPassword"
+            android:exported="false" />
+        <activity
             android:name=".Comentarios"
             android:exported="false" />
         <activity
